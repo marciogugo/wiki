@@ -1,0 +1,67 @@
+body {
+    margin: 0;
+    background-color: white;
+    width: 95%; /* marcio scrollbars */
+}
+
+code {
+    white-space: pre;
+}
+
+h1 {
+    margin-top: 0px;
+    padding-top: 10px;
+}
+
+textarea {
+    height: 50vh;
+    width: 80%;
+}
+
+.main {
+    padding: 10px;
+}
+
+.search {
+    width: 100%;
+    font-size: 15px;
+    line-height: 15px;
+}
+
+.sidebar {
+    background-color: #f0f0f0;
+    height: 100vh;
+    padding: 20px;
+}
+
+.sidebar h2 {
+    margin-top: 5px;
+}
+
+.entry_header {
+    display: flex;
+    align-items: baseline;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.entry_body {
+    display: flex;
+    margin-bottom: 20px;
+    align-items: baseline;
+    font-size: 20px;
+}
+
+.entry_submit{
+    margin-left: 82%;
+}
+
+.field_title {
+    font-size: 20px;
+    font-weight: bold;
+    width: 150px;
+}
+
+.form-control {
+    width: 100%;
+}

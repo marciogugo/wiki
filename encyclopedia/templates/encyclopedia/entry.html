@@ -1,0 +1,18 @@
+{% extends "encyclopedia/layout.html" %}
+{% load crispy_forms_tags %}
+{% load markdownify %}
+
+{% block title %}
+    {{ title }} - Encyclopedia
+{% endblock title %}
+
+{% block body %}
+    {{ body | markdownify }}
+
+    <form action="Edit/{{ title }}" method="post">
+        {% csrf_token %}
+        <button name="back" type="submit" class="btn btn-primary btn-primary">Back</button> 
+        <button name="submit" type="submit" class="btn btn-primary btn-primary">Edit the content</button>
+    </form>
+{% endblock body %}
+    

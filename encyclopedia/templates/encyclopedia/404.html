@@ -1,0 +1,17 @@
+{% extends "500.html" %}
+{% load markdownify %}
+
+{% block title %}
+    {{ title }}
+{% endblock title %}
+
+{% block body %}
+    {{ body | markdownify }}
+{% endblock body %}
+
+{% block error_body %}
+    {{ error_body | markdownify }}
+    <span class="text-danger mb-5">Please go back to the index page.</span>
+    <a href="{% url "index" %}">Back</a>
+{% endblock error_body %}
+

@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+{% load markdownify %}
+
+{% block title %}
+    {{ title }}
+{% endblock title %}
+
+{% block body %}
+    {{ body | markdownify }}
+    <span class="text-dark mb-5">Go back to the</span>
+    <button onclick="history.go(-1)" class="btn-primary">entry page</button>
+{% endblock body %}

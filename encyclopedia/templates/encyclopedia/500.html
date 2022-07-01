@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% load markdownify %}
+
+{% block title %}
+    {{ title }}
+{% endblock title %}
+
+{% block body %}
+    {{ body | markdownify }}
+{% endblock body %}
+
+<div>
+    {% block error_body %}
+        {{ error_body | markdownify }}
+        <span class="text-dark mb-5">Go back to the</span>
+        <a href="{% url "index" %}">index page</a>
+    {% endblock error_body %}
+</div>
