@@ -36,7 +36,7 @@
             </div>
             <div class="main col-lg-10 col-md-9">
                 {% block body %}
-                    {{ body | markdownify }}
+                    {{ body | markdownify | safe }}
                     
                     {% block new_entry %}
                     {% endblock new_entry %}

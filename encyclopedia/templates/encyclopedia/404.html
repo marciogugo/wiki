@@ -10,7 +10,7 @@
 {% endblock body %}
 
 {% block error_body %}
-    {{ error_body | markdownify }}
+    {{ error_body | markdownify | safe }}
     <span class="text-danger mb-5">Please go back to the index page.</span>
     <a href="{% url "index" %}">Back</a>
 {% endblock error_body %}

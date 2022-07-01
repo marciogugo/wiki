@@ -15,8 +15,6 @@ from django.core.files.base import ContentFile
 from django.core.files.storage import default_storage, FileSystemStorage
 from .import util
  
-from markdown import markdown
-
 def index(request):
     return render(request, "encyclopedia/index.html", {
         "entries": util.list_entries()
@@ -102,8 +100,6 @@ def edit_entry_view(request, entry):
                         file_to_delete = DEFAULT_FILE_STORAGE + entry + ".md"
                         fs.delete(file_to_delete)
 
-                print(newContent)
-                
                 fs.save(file_to_save, ContentFile(newContent))
 
                 return HttpResponseRedirect(reverse('get-entry', args=[newTitle]))

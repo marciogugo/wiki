@@ -1,9 +1,7 @@
-{% load markdownify %}
-
 {% block textarea %}
     <div display="block", class="input-xlarge", width="60%">
         <small class="form-text text-muted">Content</small>
-        <textarea name="formContent" class="input-xlarge textarea form-control" rows="10" cols="40">{{ formContent }}</textarea>
+        <textarea name="formContent" class="input-xlarge textarea form-control" rows="10">{{ formContent }}</textarea>
         <small class="form-text text-muted">Enter entry content here in markdown format.</small>
     </div>
 {% endblock textarea %}

@@ -11,7 +11,7 @@
 
 <div>
     {% block error_body %}
-        {{ error_body | markdownify }}
+        {{ error_body | markdownify | safe }}
         <span class="text-dark mb-5">Go back to the</span>
         <a href="{% url "index" %}">index page</a>
     {% endblock error_body %}
