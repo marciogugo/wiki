@@ -68,7 +68,7 @@ def new_entry_view(request):
 
                 if fs.exists(file_to_save):
                     content = '\n# Error\n#### The requested **Entry** already exists.\nPlease, choose another ***title*** for the entry.'
-                    return render(request,"error.html",  {"title": "Error", "error_body": content})
+                    return render(request,"error.html",  {"title": "Error", "body": content})
                 else:
                     fs.save(file_to_save, ContentFile(content))
                     return render(request,"entry.html",  {"title": title, "body": content})
@@ -139,14 +139,14 @@ def get_entry_view(request, entry):
         content = util.get_entry(entry)
         if content == None:
             content = '\n#'+ entry +'\n#### The requested **entry** was not found.\nPlease, try again using *different* ***keywords***.'
-            return render(request, "404.html", {"title": "404 Not found", "error_body": content})
+            return render(request, "404.html", {"title": "404 Not found", "body": content})
         else:
             return render(request,"entry.html", {"title": entry, "body": util.get_entry(entry)})
 
 def error_404_view(request, exception):
     entry_document = '\n# Error 404\n#### The requested **URL** was not found.\nPlease, try again using a *different* ***URL***.'
-    return render(request, "404.html", {"title": "Error 404", "error_body": entry_document})
+    return render(request, "404.html", {"title": "Error 404", "body": entry_document})
 
 def error_500_view(request):
     entry_document = '\n# Error 500\n#### The requested **page** does not exist.\nPlease, contact our ***technical support*** or'
-    return render(request, "500.html", {"title": "Error 500", "error_body": entry_document})    
+    return render(request, "500.html", {"title": "Error 500", "body": entry_document})    
